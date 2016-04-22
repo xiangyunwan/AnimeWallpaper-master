@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+  <!-- For acthonsheet Animation -->
+  <style name="ActionsheetAnimation">
+    <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+    <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+  </style>
+
+
+  <!-- For dialog Animation -->
+  <style name="iosalertdialog">
+    <item name="android:windowEnterAnimation">@anim/scale_in</item>
+    <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+  </style>
+
+</resources>

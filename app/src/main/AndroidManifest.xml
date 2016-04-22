@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.github.miao1007.animewallpaper">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+
+  <!--bughd-->
+  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+  <!-- setwallpaper -->
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+
+  <application
+      android:name=".support.GlobalContext"
+      android:icon="@mipmap/ic_launcher"
+      android:theme="@style/iOSTheme"
+      android:label="@string/app_name">
+
+    <meta-data android:value="141640f581df6968db968b2abc9f503b"
+        android:name="BUG_HD_SDK_GENERAL_KEY"/>
+
+    <activity
+        android:name=".ui.activity.MainActivity"
+        android:theme="@style/MainTheme"
+        android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity
+        android:name=".ui.activity.DetailedActivity"
+        android:theme="@style/DetailedTheme">
+    </activity>
+    <activity
+        android:name=".ui.activity.WallpaperSetActivity"
+        android:label="@string/set_wallpaper_compat"
+        android:theme="@style/Settings">
+      <intent-filter>
+        <action android:name="android.service.wallpaper.CROP_AND_SET_WALLPAPER"/>
+
+        <category android:name="android.intent.category.DEFAULT"/>
+
+        <data android:mimeType="image/*"/>
+      </intent-filter>
+    </activity>
+
+    <service
+        android:name=".support.service.DownloadService"
+        android:enabled="true"
+        android:exported="false">
+    </service>
+
+    <activity android:name=".ui.activity.SearchActivity" android:theme="@style/DetailedTheme">
+
+    </activity>
+
+
+  </application>
+
+</manifest>

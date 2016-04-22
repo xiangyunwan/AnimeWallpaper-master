@@ -1,0 +1,114 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/root_detailed"
+    tools:context="com.github.miao1007.animewallpaper.ui.activity.DetailedActivity"
+>
+
+
+  <!--background-->
+
+
+  <ImageView
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/blur_bg"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scaleType="centerCrop"
+      android:adjustViewBounds="true"/>
+
+  <!--real layout-->
+  <RelativeLayout android:layout_width="match_parent"
+      android:orientation="vertical"
+      android:id="@+id/image_holder"
+      android:layout_height="match_parent">
+    <!--navigationbar 4x13 = 52-->
+
+    <com.github.miao1007.animewallpaper.ui.widget.NavigationBar android:layout_width="match_parent"
+        android:id="@+id/navigation_bar"
+        android:background="?attr/selectableItemBackground"
+        android:layout_height="?attr/actionBarSize">
+
+      <!--48x48dp - 16 =fixXY=>  32x32 dp icon-->
+
+      <ImageView
+          android:src="@drawable/back_48"
+          android:layout_alignParentLeft="true"
+          android:id="@+id/detailed_back"
+          android:background="?attr/selectableItemBackground"
+          android:padding="16dp"
+          android:layout_alignParentBottom="true"
+          android:scaleType="fitXY"
+          android:layout_width="?attr/actionBarSize"
+          android:layout_height="?attr/actionBarSize"/>
+
+
+      <ImageView
+          android:src="@drawable/tag"
+          android:layout_alignParentRight="true"
+          android:id="@+id/detailed_tags"
+          android:background="?attr/selectableItemBackground"
+          android:padding="16dp"
+          android:layout_alignParentBottom="true"
+          android:scaleType="fitXY"
+          android:layout_width="?attr/actionBarSize"
+          android:layout_height="?attr/actionBarSize"/>
+
+
+    </com.github.miao1007.animewallpaper.ui.widget.NavigationBar>
+
+
+    <com.github.miao1007.animewallpaper.ui.widget.PieImageView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/iv_detailed_card"
+        android:src="@drawable/place_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true" android:layout_below="@+id/navigation_bar"
+        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll_detailed_downloads"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/detailed_iv_size"
+        android:layout_height="wrap_content" android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+      <ImageView
+          android:src="@drawable/wallpaper_96"
+          android:layout_gravity="center_horizontal"
+          android:layout_width="@dimen/detailed_iv_size"
+          android:id="@+id/image_setwallpaper"
+
+          android:layout_height="@dimen/detailed_iv_size"
+          android:layout_weight="1"/>
+
+      <ImageView
+          android:src="@drawable/download_96"
+          android:layout_gravity="center_horizontal"
+          android:layout_width="@dimen/detailed_iv_size"
+          android:id="@+id/image_download"
+          android:layout_height="@dimen/detailed_iv_size"
+          android:layout_weight="1"/>
+
+      <ImageView
+          android:src="@drawable/share_96"
+          android:id="@+id/image_share"
+          android:layout_gravity="center_horizontal"
+          android:layout_width="@dimen/detailed_iv_size"
+          android:layout_height="@dimen/detailed_iv_size"
+          android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+  </RelativeLayout>
+
+
+</merge>
